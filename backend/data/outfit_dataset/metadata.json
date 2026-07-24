@@ -1,0 +1,2702 @@
+[
+  {
+    "image_url": "data/raw/images/26588.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "26588"
+  },
+  {
+    "image_url": "data/raw/images/35989.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "35989"
+  },
+  {
+    "image_url": "data/raw/images/4478.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "4478"
+  },
+  {
+    "image_url": "data/raw/images/47642.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Winter",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "47642"
+  },
+  {
+    "image_url": "data/raw/images/3186.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "3186"
+  },
+  {
+    "image_url": "data/raw/images/35341.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Brown"
+    ],
+    "source_id": "35341"
+  },
+  {
+    "image_url": "data/raw/images/8901.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "8901"
+  },
+  {
+    "image_url": "data/raw/images/39723.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "39723"
+  },
+  {
+    "image_url": "data/raw/images/58667.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Multi"
+    ],
+    "source_id": "58667"
+  },
+  {
+    "image_url": "data/raw/images/23327.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Brown"
+    ],
+    "source_id": "23327"
+  },
+  {
+    "image_url": "data/raw/images/29769.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "29769"
+  },
+  {
+    "image_url": "data/raw/images/12114.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtis",
+      "Ethnic",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Cream"
+    ],
+    "source_id": "12114"
+  },
+  {
+    "image_url": "data/raw/images/35937.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "35937"
+  },
+  {
+    "image_url": "data/raw/images/57010.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Flats",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "57010"
+  },
+  {
+    "image_url": "data/raw/images/14122.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "14122"
+  },
+  {
+    "image_url": "data/raw/images/16522.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "16522"
+  },
+  {
+    "image_url": "data/raw/images/11707.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "11707"
+  },
+  {
+    "image_url": "data/raw/images/39720.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Jumpsuit",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Olive"
+    ],
+    "source_id": "39720"
+  },
+  {
+    "image_url": "data/raw/images/12102.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "12102"
+  },
+  {
+    "image_url": "data/raw/images/4874.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "4874"
+  },
+  {
+    "image_url": "data/raw/images/57834.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Grey Melange"
+    ],
+    "source_id": "57834"
+  },
+  {
+    "image_url": "data/raw/images/51756.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "51756"
+  },
+  {
+    "image_url": "data/raw/images/5942.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "5942"
+  },
+  {
+    "image_url": "data/raw/images/4825.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Track Pants",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "4825"
+  },
+  {
+    "image_url": "data/raw/images/22172.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Tan"
+    ],
+    "source_id": "22172"
+  },
+  {
+    "image_url": "data/raw/images/33555.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "33555"
+  },
+  {
+    "image_url": "data/raw/images/30816.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Leggings",
+      "Ethnic",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "30816"
+  },
+  {
+    "image_url": "data/raw/images/20678.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "20678"
+  },
+  {
+    "image_url": "data/raw/images/29167.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "29167"
+  },
+  {
+    "image_url": "data/raw/images/16509.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "16509"
+  },
+  {
+    "image_url": "data/raw/images/48085.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "48085"
+  },
+  {
+    "image_url": "data/raw/images/52161.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "52161"
+  },
+  {
+    "image_url": "data/raw/images/47457.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Flats",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "47457"
+  },
+  {
+    "image_url": "data/raw/images/43380.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "43380"
+  },
+  {
+    "image_url": "data/raw/images/43629.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "43629"
+  },
+  {
+    "image_url": "data/raw/images/22800.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "22800"
+  },
+  {
+    "image_url": "data/raw/images/11745.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "11745"
+  },
+  {
+    "image_url": "data/raw/images/57048.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "57048"
+  },
+  {
+    "image_url": "data/raw/images/21745.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Fall",
+      "Unisex"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "21745"
+  },
+  {
+    "image_url": "data/raw/images/4983.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "4983"
+  },
+  {
+    "image_url": "data/raw/images/21020.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "21020"
+  },
+  {
+    "image_url": "data/raw/images/23621.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Navy Blue"
+    ],
+    "source_id": "23621"
+  },
+  {
+    "image_url": "data/raw/images/11116.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "11116"
+  },
+  {
+    "image_url": "data/raw/images/35434.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "35434"
+  },
+  {
+    "image_url": "data/raw/images/57435.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "57435"
+  },
+  {
+    "image_url": "data/raw/images/15677.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Beige"
+    ],
+    "source_id": "15677"
+  },
+  {
+    "image_url": "data/raw/images/8500.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Multi"
+    ],
+    "source_id": "8500"
+  },
+  {
+    "image_url": "data/raw/images/10305.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "10305"
+  },
+  {
+    "image_url": "data/raw/images/4438.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Unisex"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "4438"
+  },
+  {
+    "image_url": "data/raw/images/32963.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "32963"
+  },
+  {
+    "image_url": "data/raw/images/24754.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "24754"
+  },
+  {
+    "image_url": "data/raw/images/51448.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Gold"
+    ],
+    "source_id": "51448"
+  },
+  {
+    "image_url": "data/raw/images/21408.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "21408"
+  },
+  {
+    "image_url": "data/raw/images/13472.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "13472"
+  },
+  {
+    "image_url": "data/raw/images/28688.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Pink"
+    ],
+    "source_id": "28688"
+  },
+  {
+    "image_url": "data/raw/images/34064.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "34064"
+  },
+  {
+    "image_url": "data/raw/images/38837.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Pink"
+    ],
+    "source_id": "38837"
+  },
+  {
+    "image_url": "data/raw/images/44643.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "44643"
+  },
+  {
+    "image_url": "data/raw/images/24522.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "24522"
+  },
+  {
+    "image_url": "data/raw/images/48473.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "48473"
+  },
+  {
+    "image_url": "data/raw/images/59985.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "59985"
+  },
+  {
+    "image_url": "data/raw/images/13113.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Khaki"
+    ],
+    "source_id": "13113"
+  },
+  {
+    "image_url": "data/raw/images/48075.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Turquoise Blue"
+    ],
+    "source_id": "48075"
+  },
+  {
+    "image_url": "data/raw/images/39123.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Leggings",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "39123"
+  },
+  {
+    "image_url": "data/raw/images/33516.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Cream"
+    ],
+    "source_id": "33516"
+  },
+  {
+    "image_url": "data/raw/images/7883.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Sports",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "7883"
+  },
+  {
+    "image_url": "data/raw/images/57002.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Flats",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Gold"
+    ],
+    "source_id": "57002"
+  },
+  {
+    "image_url": "data/raw/images/4989.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "4989"
+  },
+  {
+    "image_url": "data/raw/images/9033.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Winter",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "9033"
+  },
+  {
+    "image_url": "data/raw/images/11308.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Spring",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "11308"
+  },
+  {
+    "image_url": "data/raw/images/1972.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Sports",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "1972"
+  },
+  {
+    "image_url": "data/raw/images/23833.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Flats",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Silver"
+    ],
+    "source_id": "23833"
+  },
+  {
+    "image_url": "data/raw/images/22289.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Gold"
+    ],
+    "source_id": "22289"
+  },
+  {
+    "image_url": "data/raw/images/23665.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "23665"
+  },
+  {
+    "image_url": "data/raw/images/19773.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Stockings",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "19773"
+  },
+  {
+    "image_url": "data/raw/images/50952.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "50952"
+  },
+  {
+    "image_url": "data/raw/images/57058.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "57058"
+  },
+  {
+    "image_url": "data/raw/images/38775.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Winter",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "38775"
+  },
+  {
+    "image_url": "data/raw/images/5019.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Skirts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Navy Blue"
+    ],
+    "source_id": "5019"
+  },
+  {
+    "image_url": "data/raw/images/14745.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "14745"
+  },
+  {
+    "image_url": "data/raw/images/10267.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "10267"
+  },
+  {
+    "image_url": "data/raw/images/36202.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Summer",
+      "Boys"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "36202"
+  },
+  {
+    "image_url": "data/raw/images/34586.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "34586"
+  },
+  {
+    "image_url": "data/raw/images/28817.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "28817"
+  },
+  {
+    "image_url": "data/raw/images/46414.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "46414"
+  },
+  {
+    "image_url": "data/raw/images/7592.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "7592"
+  },
+  {
+    "image_url": "data/raw/images/3920.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Track Pants",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Beige"
+    ],
+    "source_id": "3920"
+  },
+  {
+    "image_url": "data/raw/images/7231.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Formal Shoes",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "7231"
+  },
+  {
+    "image_url": "data/raw/images/15520.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "15520"
+  },
+  {
+    "image_url": "data/raw/images/10406.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "10406"
+  },
+  {
+    "image_url": "data/raw/images/41312.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Capris",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Pink"
+    ],
+    "source_id": "41312"
+  },
+  {
+    "image_url": "data/raw/images/3796.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "3796"
+  },
+  {
+    "image_url": "data/raw/images/52162.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "52162"
+  },
+  {
+    "image_url": "data/raw/images/20921.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Olive"
+    ],
+    "source_id": "20921"
+  },
+  {
+    "image_url": "data/raw/images/15328.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Sweaters",
+      "Sports",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "15328"
+  },
+  {
+    "image_url": "data/raw/images/26934.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "26934"
+  },
+  {
+    "image_url": "data/raw/images/55642.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "55642"
+  },
+  {
+    "image_url": "data/raw/images/48477.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Cream"
+    ],
+    "source_id": "48477"
+  },
+  {
+    "image_url": "data/raw/images/42146.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "42146"
+  },
+  {
+    "image_url": "data/raw/images/41784.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "41784"
+  },
+  {
+    "image_url": "data/raw/images/11717.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Yellow"
+    ],
+    "source_id": "11717"
+  },
+  {
+    "image_url": "data/raw/images/27218.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "27218"
+  },
+  {
+    "image_url": "data/raw/images/4829.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Track Pants",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "4829"
+  },
+  {
+    "image_url": "data/raw/images/2920.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "2920"
+  },
+  {
+    "image_url": "data/raw/images/34256.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Tracksuits",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "34256"
+  },
+  {
+    "image_url": "data/raw/images/33958.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Leggings",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "33958"
+  },
+  {
+    "image_url": "data/raw/images/48385.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Jeans",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Navy Blue"
+    ],
+    "source_id": "48385"
+  },
+  {
+    "image_url": "data/raw/images/9091.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Winter",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Maroon"
+    ],
+    "source_id": "9091"
+  },
+  {
+    "image_url": "data/raw/images/16802.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "16802"
+  },
+  {
+    "image_url": "data/raw/images/42217.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Party",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "party",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "42217"
+  },
+  {
+    "image_url": "data/raw/images/26927.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "26927"
+  },
+  {
+    "image_url": "data/raw/images/39103.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Formal",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "39103"
+  },
+  {
+    "image_url": "data/raw/images/16998.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Flats",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Beige"
+    ],
+    "source_id": "16998"
+  },
+  {
+    "image_url": "data/raw/images/59993.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "59993"
+  },
+  {
+    "image_url": "data/raw/images/45603.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Formal Shoes",
+      "Formal",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "45603"
+  },
+  {
+    "image_url": "data/raw/images/6594.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tops",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "6594"
+  },
+  {
+    "image_url": "data/raw/images/5739.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "5739"
+  },
+  {
+    "image_url": "data/raw/images/34599.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "34599"
+  },
+  {
+    "image_url": "data/raw/images/58490.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "58490"
+  },
+  {
+    "image_url": "data/raw/images/4988.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "4988"
+  },
+  {
+    "image_url": "data/raw/images/2923.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "2923"
+  },
+  {
+    "image_url": "data/raw/images/44837.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "44837"
+  },
+  {
+    "image_url": "data/raw/images/58502.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Beige"
+    ],
+    "source_id": "58502"
+  },
+  {
+    "image_url": "data/raw/images/28521.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Capris",
+      "Sports",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "28521"
+  },
+  {
+    "image_url": "data/raw/images/20919.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "20919"
+  },
+  {
+    "image_url": "data/raw/images/33505.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Pink"
+    ],
+    "source_id": "33505"
+  },
+  {
+    "image_url": "data/raw/images/17947.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Track Pants",
+      "Sports",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "17947"
+  },
+  {
+    "image_url": "data/raw/images/7493.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Capris",
+      "Sports",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "7493"
+  },
+  {
+    "image_url": "data/raw/images/17671.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Beige"
+    ],
+    "source_id": "17671"
+  },
+  {
+    "image_url": "data/raw/images/44945.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Navy Blue"
+    ],
+    "source_id": "44945"
+  },
+  {
+    "image_url": "data/raw/images/57061.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "57061"
+  },
+  {
+    "image_url": "data/raw/images/34003.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tops",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "34003"
+  },
+  {
+    "image_url": "data/raw/images/23256.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Formal Shoes",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Tan"
+    ],
+    "source_id": "23256"
+  },
+  {
+    "image_url": "data/raw/images/54056.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Leggings",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Pink"
+    ],
+    "source_id": "54056"
+  },
+  {
+    "image_url": "data/raw/images/43889.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "43889"
+  },
+  {
+    "image_url": "data/raw/images/20244.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Peach"
+    ],
+    "source_id": "20244"
+  },
+  {
+    "image_url": "data/raw/images/38761.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "38761"
+  },
+  {
+    "image_url": "data/raw/images/39322.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Capris",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "39322"
+  },
+  {
+    "image_url": "data/raw/images/27914.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Formal",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Brown"
+    ],
+    "source_id": "27914"
+  },
+  {
+    "image_url": "data/raw/images/47674.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "47674"
+  },
+  {
+    "image_url": "data/raw/images/16567.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "16567"
+  },
+  {
+    "image_url": "data/raw/images/1621.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Sports",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "1621"
+  },
+  {
+    "image_url": "data/raw/images/34585.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "34585"
+  },
+  {
+    "image_url": "data/raw/images/57104.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tops",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "57104"
+  },
+  {
+    "image_url": "data/raw/images/13303.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Beige"
+    ],
+    "source_id": "13303"
+  },
+  {
+    "image_url": "data/raw/images/58381.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Grey"
+    ],
+    "source_id": "58381"
+  },
+  {
+    "image_url": "data/raw/images/5780.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tops",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "5780"
+  },
+  {
+    "image_url": "data/raw/images/31112.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Capris",
+      "Casual",
+      "Summer",
+      "Boys"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Yellow"
+    ],
+    "source_id": "31112"
+  },
+  {
+    "image_url": "data/raw/images/12125.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "12125"
+  },
+  {
+    "image_url": "data/raw/images/43644.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Party",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "party",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "43644"
+  },
+  {
+    "image_url": "data/raw/images/38839.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Olive"
+    ],
+    "source_id": "38839"
+  },
+  {
+    "image_url": "data/raw/images/43658.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "43658"
+  },
+  {
+    "image_url": "data/raw/images/37971.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "37971"
+  },
+  {
+    "image_url": "data/raw/images/38582.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "38582"
+  },
+  {
+    "image_url": "data/raw/images/39943.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Brown"
+    ],
+    "source_id": "39943"
+  },
+  {
+    "image_url": "data/raw/images/41890.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Shorts",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "41890"
+  },
+  {
+    "image_url": "data/raw/images/20259.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "20259"
+  },
+  {
+    "image_url": "data/raw/images/15118.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Formal",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "formal",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "15118"
+  },
+  {
+    "image_url": "data/raw/images/53440.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "53440"
+  },
+  {
+    "image_url": "data/raw/images/25422.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "25422"
+  },
+  {
+    "image_url": "data/raw/images/28762.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Kurtas",
+      "Ethnic",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "28762"
+  },
+  {
+    "image_url": "data/raw/images/17941.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "17941"
+  },
+  {
+    "image_url": "data/raw/images/37267.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "37267"
+  },
+  {
+    "image_url": "data/raw/images/24577.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tops",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "24577"
+  },
+  {
+    "image_url": "data/raw/images/19041.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "19041"
+  },
+  {
+    "image_url": "data/raw/images/43327.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Green"
+    ],
+    "source_id": "43327"
+  },
+  {
+    "image_url": "data/raw/images/30901.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Salwar",
+      "Ethnic",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "ethnic",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "30901"
+  },
+  {
+    "image_url": "data/raw/images/38840.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "38840"
+  },
+  {
+    "image_url": "data/raw/images/9817.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "9817"
+  },
+  {
+    "image_url": "data/raw/images/17911.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Jackets",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "17911"
+  },
+  {
+    "image_url": "data/raw/images/8481.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Fall",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Peach"
+    ],
+    "source_id": "8481"
+  },
+  {
+    "image_url": "data/raw/images/11514.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Heels",
+      "Casual",
+      "Winter",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "11514"
+  },
+  {
+    "image_url": "data/raw/images/39685.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Casual Shoes",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "39685"
+  },
+  {
+    "image_url": "data/raw/images/6630.jpg",
+    "category": "Shoes",
+    "style_tags": [
+      "Sports Shoes",
+      "Sports",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "sport",
+    "color_tags": [
+      "White"
+    ],
+    "source_id": "6630"
+  },
+  {
+    "image_url": "data/raw/images/48376.jpg",
+    "category": "Bottomwear",
+    "style_tags": [
+      "Trousers",
+      "Casual",
+      "Summer",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Blue"
+    ],
+    "source_id": "48376"
+  },
+  {
+    "image_url": "data/raw/images/45777.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Red"
+    ],
+    "source_id": "45777"
+  },
+  {
+    "image_url": "data/raw/images/8856.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Shirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Purple"
+    ],
+    "source_id": "8856"
+  },
+  {
+    "image_url": "data/raw/images/34442.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Summer",
+      "Women"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Yellow"
+    ],
+    "source_id": "34442"
+  },
+  {
+    "image_url": "data/raw/images/34065.jpg",
+    "category": "Dress",
+    "style_tags": [
+      "Dresses",
+      "Casual",
+      "Summer",
+      "Girls"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Black"
+    ],
+    "source_id": "34065"
+  },
+  {
+    "image_url": "data/raw/images/24611.jpg",
+    "category": "Topwear",
+    "style_tags": [
+      "Tshirts",
+      "Casual",
+      "Fall",
+      "Men"
+    ],
+    "formality_level": "casual",
+    "color_tags": [
+      "Brown"
+    ],
+    "source_id": "24611"
+  }
+]

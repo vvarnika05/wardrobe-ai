@@ -1,0 +1,37 @@
+# -----------------------------
+# Python
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Chroma Vector DB
+data/chroma_store/
+
+# Raw datasets
+data/raw/
+data/raw_dataset/
+
+# Node (if frontend is in same repo)
+node_modules/
+dist/
+build/

@@ -1,0 +1,4 @@
+.env
+.env.*
+data/raw/images/
+data/raw/styles.csv
