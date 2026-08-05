@@ -26,3 +26,4 @@ class SavedOutfit(BaseModel):
     color_tags: list
     formality_level: str | None
     swiped_at: datetime
+    image_url: str | None = None
