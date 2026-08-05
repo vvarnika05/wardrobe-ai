@@ -1,0 +1,50 @@
+/*
+ * Shared brand tokens — imported once at app root.
+ * Available on every page (landing cream AND dark app screens).
+ * Does NOT set page backgrounds; those stay per-route.
+ */
+
+:root {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-script: "Caveat", cursive;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Single sitewide accent (landing coral) — replaces the old gold */
+  --color-accent: #e8836b;
+  --color-accent-hover: #d46d54;
+
+  /* Shared dark-surface tokens (dark pages only; backgrounds unchanged) */
+  --bg: #0d0d0d;
+  --bg-elevated: #161616;
+  --text: #f0ede8;
+  --text-muted: #9a958c;
+  --reject: #7a8494;
+  --border: #2a2a2a;
+}
+
+/* Editorial eyebrow — same convention as landing "A PERSONAL FASHION EDIT" */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 12px;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+  line-height: 1.05;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.page-sub {
+  color: var(--text-muted);
+  margin: 0 0 28px;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
