@@ -25,13 +25,13 @@ venv/
 *.log
 
 # Chroma Vector DB
-data/chroma_store/
+backend/data/chroma_store/
 
 # Raw datasets
-data/raw/
-data/raw_dataset/
+backend/data/raw/
+backend/data/raw_dataset/
 
-# Node (if frontend is in same repo)
+# Node 
 node_modules/
 dist/
 build/
