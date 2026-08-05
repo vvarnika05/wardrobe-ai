@@ -53,23 +53,34 @@ def retrieve_candidate_outfits(
     fit_pref: str,
     sleeve_pref: str,
     top_k: int = 15,
+    exclude_ids: set[int] | None = None,
 ) -> list[dict]:
     """
     Return top_k outfits from Chroma that are closest to this profile.
+
+    exclude_ids: outfit IDs already swiped by this user (any decision). Filtered
+    out BEFORE truncating to top_k so exclusions don't shrink the shortlist.
 
     Each result dict has:
       - outfit_id (int)
       - category, style_tags, color_tags, formality_level (from Chroma metadata)
       - distance (float — lower means more similar for Chroma's default metric)
     """
+    exclude_ids = exclude_ids or set()
     query_text = _build_query_text(style_tags, color_prefs, fit_pref, sleeve_pref)
     query_vector = embed_text(query_text)
 
-    collection = get_chroma_collection() #connecting to chroma
-    
+    collection = get_chroma_collection()  # connecting to chroma
+
+    # Over-fetch so we can drop swiped IDs and still fill top_k when possible.
+    catalog_size = collection.count()
+    n_fetch = min(catalog_size, top_k + len(exclude_ids)) if catalog_size else top_k
+    if n_fetch <= 0:
+        return []
+
     results = collection.query(
         query_embeddings=[query_vector],
-        n_results=top_k,
+        n_results=n_fetch,
         include=["metadatas", "distances"],
     )
 
@@ -80,9 +91,12 @@ def retrieve_candidate_outfits(
 
     candidates: list[dict] = []
     for doc_id, meta, distance in zip(ids, metadatas, distances):
+        outfit_id = int(doc_id)
+        if outfit_id in exclude_ids:
+            continue
         candidates.append(
             {
-                "outfit_id": int(doc_id),
+                "outfit_id": outfit_id,
                 "category": meta.get("category"),
                 # Stored as joined strings in Chroma; split back into lists.
                 "style_tags": [
@@ -99,5 +113,7 @@ def retrieve_candidate_outfits(
                 "distance": distance,
             }
         )
+        if len(candidates) >= top_k:
+            break
 
     return candidates

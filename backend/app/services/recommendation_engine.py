@@ -82,23 +82,33 @@ def generate_recommendations(
     fit_pref: str,
     sleeve_pref: str,
     deck_size: int = 10,
+    exclude_ids: set[int] | None = None,
 ) -> list[dict]:
     """
     Build a ranked swipe deck for this profile.
 
+    exclude_ids: outfit IDs this user has already swiped (accepted or rejected).
+    Those are dropped at retrieval so decks don't resurface prior looks.
+
     Returns a list of dicts:
       {outfit_id, category, color_tags, formality_level, reason}
+    May be shorter than deck_size (or empty) if the catalog is exhausted.
     """
     # a) Retrieve more candidates than we show so the LLM can filter weak matches.
+    #    Swiped outfits are excluded before top_k truncation inside retrieval.
     candidates = retrieve_candidate_outfits(
         style_tags=profile,
         color_prefs=color_prefs,
         fit_pref=fit_pref,
         sleeve_pref=sleeve_pref,
         top_k=15,
+        exclude_ids=exclude_ids,
     )
+    # Catalog exhausted (or tiny remainder) — return what we have, don't error.
     if not candidates:
-        raise ValueError("No candidate outfits returned from retrieval.")
+        return []
+
+    effective_deck_size = min(deck_size, len(candidates))
 
     # b) Load static trends.
     trends = get_current_trends()
@@ -111,7 +121,7 @@ def generate_recommendations(
         sleeve_pref=sleeve_pref,
         candidates=candidates,
         trends=trends,
-        deck_size=deck_size,
+        deck_size=effective_deck_size,
     )
 
     # d) Call Gemini (reuses existing llm_client — no duplicate SDK setup).
@@ -153,5 +163,5 @@ def generate_recommendations(
             }
         )
 
-    # g) Cap at deck_size (LLM may return extras; we asked for deck_size).
-    return merged[:deck_size]
+    # g) Cap at deck_size (LLM may return extras; we asked for effective_deck_size).
+    return merged[:effective_deck_size]
