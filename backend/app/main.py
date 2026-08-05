@@ -1,5 +1,8 @@
+from pathlib import Path
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.api.routes import auth, profile, recommend, swipe
 
@@ -17,10 +20,13 @@ app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(profile.router, prefix="/profile", tags=["profile"])
 app.include_router(recommend.router, prefix="/recommend", tags=["recommend"])
 app.include_router(swipe.router, tags=["swipe"])
-# usually for a fastapi application we should write all the routes in the main.py but in this application we kind of decouple it into different files and merge them all in the main file
+
+# Serve outfit JPGs so the frontend can load them as <img src="...">.
+# DB stores paths like "data/raw/images/35989.jpg"; URLs become /static/images/35989.jpg
+_IMAGES_DIR = Path(__file__).resolve().parents[1] / "data" / "raw" / "images"
+app.mount("/static/images", StaticFiles(directory=str(_IMAGES_DIR)), name="outfit_images")
+
 
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
-
-
