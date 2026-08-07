@@ -39,10 +39,14 @@ export default function OutfitCard({ outfit, tint = 0, style, className = "" }) 
           <span className="outfit-card__category">
             {outfit.category || "Look"}
           </span>
-          {outfit.formality_level && (
-            <span className="outfit-card__meta">{outfit.formality_level}</span>
+          {(outfit.formality_level || colors) && (
+            <div className="outfit-card__meta-row">
+              {outfit.formality_level && (
+                <span className="outfit-card__meta">{outfit.formality_level}</span>
+              )}
+              {colors && <span className="outfit-card__meta">{colors}</span>}
+            </div>
           )}
-          {colors && <span className="outfit-card__meta">{colors}</span>}
         </div>
       </div>
       {outfit.reason && <p className="outfit-card__reason">{outfit.reason}</p>}

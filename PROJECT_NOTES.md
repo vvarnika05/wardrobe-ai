@@ -27,6 +27,8 @@ Auth: JWT Bearer (`Authorization: Bearer <token>`). CORS allows all origins for 
 
 **Static images:** `GET /static/images/{filename}` serves files from `backend/data/raw/images/`.
 
+**Outfit image resolution (known limitation):** every curated outfit file is **60×80 px** JPEG — the Kaggle Fashion Product Images **Small** dump. Softness from upscaling is inherent; CSS cannot invent detail. UI prioritizes a usable focal card over pixel-perfect sharpness: SwipeDeck page `max-width: 480px` → card ~**440px** wide (capped by `max-height: min(62vh, 580px)`); Saved grid `minmax(200px, 1fr)`. Overlay labels are stacked (category, then formality/color) so they don’t collide. Profile / StyleQuizForm do **not** render outfit images. Swap to the high-res Kaggle set if crisp product photos are required.
+
 ### Models (Postgres)
 
 - **User** — id, email, hashed_password, created_at  
@@ -71,8 +73,8 @@ This is **text-tag retrieval + LLM ranking**, not image embeddings and not a cla
    `category: …, tags: …, color: …, formality: …`  
    via `sentence-transformers` `all-MiniLM-L6-v2` → Chroma collection `"outfits"` (persistent under `backend/data/chroma_store/`).  
 3. **Retrieve** — `retrieve_candidate_outfits(...)` embeds a profile query string, over-fetches from Chroma (`top_k + len(exclude_ids)`), drops already-swiped `outfit_id`s, then keeps up to `top_k=15` neighbors with distance (lower = closer).  
-4. **Generate** — `generate_recommendations` sends candidates + profile + static trends (`data/trend_data.json` via `get_current_trends`) to Gemini; LLM must pick only given `outfit_id`s. If the catalog is exhausted after exclusions, returns fewer than `deck_size` (or `[]`) — no error.  
-5. **Validate** — `validate_llm_outfit_selection` drops invented IDs / bad shapes; merge reasons onto real candidate metadata.  
+4. **Generate** — `generate_recommendations` tags each candidate `[COLOR MATCH]` / `[COLOR MISMATCH]` via case-insensitive overlap of outfit `color_tags` vs profile `color_prefs`, sends candidates + profile + static trends (`data/trend_data.json` via `get_current_trends`) to Gemini (prompt strongly prefers MATCH); LLM must pick only given `outfit_id`s. If the catalog is exhausted after exclusions, returns fewer than `deck_size` (or `[]`) — no error.  
+5. **Validate** — `validate_llm_outfit_selection` drops invented IDs / bad shapes; merge reasons onto real candidate metadata; **re-sort so COLOR MATCH picks come before MISMATCH** (hard ordering guarantee for early swipes).  
 6. **Serve** — attach public `image_url` in the recommend (and saved) routes.
 
 **Swipe exclusion:** `GET /recommend` loads all of the current user’s `SwipeLog.outfit_id`s (accepted **and** rejected) into `exclude_ids`, passes them into `generate_recommendations` → `retrieve_candidate_outfits`. Filtering happens before `top_k` truncation so exclusions don’t starve the shortlist.
@@ -92,7 +94,8 @@ This is **text-tag retrieval + LLM ranking**, not image embeddings and not a cla
 
 ## Known issues / fragile spots
 
-- **Query vs document text mismatch** — profile query uses `aesthetic` / `fit` / `sleeve`; outfit vectors use `category` / Kaggle tags; retrieval is directional but noisy.  
+- **Low-res outfit images (60×80)** — source Kaggle “small” dataset; some upscale softness is accepted so SwipeDeck stays a large focal card (~440px). True sharpness needs higher-res assets.  
+- **Query vs document text mismatch** — profile query uses `aesthetic` / `fit` / `sleeve`; outfit vectors use `category` / Kaggle tags; retrieval is directional but noisy. Color preference is reinforced post-retrieval via exact `color_tags` ∩ `color_prefs` (case-insensitive) — synonyms like cream≈beige are not fuzzy-matched.  
 - **Tag-only embeddings** — no CLIP/vision; color can lose to shared “Casual Topwear” tokens.  
 - **Catalog exhaustion** — ~180 outfits; after enough swipes `/recommend` may return a short or empty deck (by design — no error). Re-swiping the same id still upserts `SwipeLog`.  
 - **Chroma vs Postgres sync** — if `data/chroma_store/` is deleted, `build_embeddings.py` without `--force` skips rows that already have `embedding_id`. Use `--force` to rebuild.  

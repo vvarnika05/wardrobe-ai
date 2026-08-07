@@ -13,6 +13,16 @@ from app.utils.llm_client import generate_structured_response
 from app.utils.validators import validate_llm_outfit_selection
 
 
+def _colors_overlap(color_tags: list | None, color_prefs: list | None) -> bool:
+    """True if any outfit color_tag matches any user color_pref (case-insensitive)."""
+    prefs = {str(c).strip().lower() for c in (color_prefs or []) if str(c).strip()}
+    if not prefs:
+        # No stated prefs → treat everything as a match (don't punish the deck).
+        return True
+    tags = {str(t).strip().lower() for t in (color_tags or []) if str(t).strip()}
+    return bool(prefs & tags)
+
+
 def _build_recommendation_prompt(
     profile: dict,
     color_prefs: list[str],
@@ -22,16 +32,19 @@ def _build_recommendation_prompt(
     trends: list[str],
     deck_size: int,
 ) -> str:
-    # Strip internal fields (distance) — LLM only needs outfit facts.
-    candidates_for_prompt = [
-        {
-            "outfit_id": c["outfit_id"],
-            "category": c.get("category"),
-            "color_tags": c.get("color_tags") or [],
-            "formality_level": c.get("formality_level"),
-        }
-        for c in candidates
-    ]
+    # Strip internal fields (distance) — LLM only needs outfit facts + color flag.
+    candidates_for_prompt = []
+    for c in candidates:
+        color_match = _colors_overlap(c.get("color_tags"), color_prefs)
+        candidates_for_prompt.append(
+            {
+                "outfit_id": c["outfit_id"],
+                "category": c.get("category"),
+                "color_tags": c.get("color_tags") or [],
+                "formality_level": c.get("formality_level"),
+                "color_relevance": "[COLOR MATCH]" if color_match else "[COLOR MISMATCH]",
+            }
+        )
     candidate_ids = [c["outfit_id"] for c in candidates_for_prompt]
 
     user_profile = {
@@ -53,13 +66,18 @@ User profile:
 Current trends (manually curated — use as soft inspiration, not hard rules):
 {json.dumps(trends, indent=2)}
 
-Candidate outfits (these are the ONLY outfits you may choose from):
+Candidate outfits (these are the ONLY outfits you may choose from).
+Each has a color_relevance flag from an exact tag overlap with the user's color_prefs:
 {json.dumps(candidates_for_prompt, indent=2)}
 
 Allowed outfit_id values (copy from this list only): {candidate_ids}
 
 Task:
 - Select and RANK the best {deck_size} outfits from the candidates above.
+- Strongly prefer COLOR MATCH items. Only include a COLOR MISMATCH item if there
+  are not enough COLOR MATCH candidates to fill the deck, and if you do, the
+  reason must acknowledge it's a color departure and explain why it's included
+  anyway (e.g. a strong style/trend fit).
 - Consider the user profile first, then whether a pick gently fits current trends.
 - Write one short sentence "reason" per pick explaining why it fits this user.
 
@@ -108,12 +126,16 @@ def generate_recommendations(
     if not candidates:
         return []
 
+    # Color relevance (case-insensitive tag overlap with color_prefs) for prompt + sort.
+    for c in candidates:
+        c["color_match"] = _colors_overlap(c.get("color_tags"), color_prefs)
+
     effective_deck_size = min(deck_size, len(candidates))
 
     # b) Load static trends.
     trends = get_current_trends()
 
-    # c) Build the Gemini prompt.
+    # c) Build the Gemini prompt (includes [COLOR MATCH] / [COLOR MISMATCH] flags).
     prompt = _build_recommendation_prompt(
         profile=profile,
         color_prefs=color_prefs,
@@ -160,8 +182,15 @@ def generate_recommendations(
                 "color_tags": source.get("color_tags") or [],
                 "formality_level": source.get("formality_level"),
                 "reason": pick["reason"],
+                "color_match": bool(source.get("color_match")),
             }
         )
 
-    # g) Cap at deck_size (LLM may return extras; we asked for effective_deck_size).
-    return merged[:effective_deck_size]
+    # g) Hard guarantee: COLOR MATCH first, MISMATCH last (stable within each group).
+    merged.sort(key=lambda o: (0 if o["color_match"] else 1))
+
+    # h) Cap at deck_size; drop internal flag from API payload.
+    deck = merged[:effective_deck_size]
+    for o in deck:
+        o.pop("color_match", None)
+    return deck
