@@ -45,6 +45,7 @@ def create_or_update_profile(
     profile.color_prefs = payload.color_prefs
     profile.fit_pref = payload.fit_pref
     profile.sleeve_pref = payload.sleeve_pref
+    profile.gender_pref = payload.gender_pref
 
     db.commit()
     db.refresh(profile)

@@ -126,6 +126,13 @@ export default function Profile() {
               <h2 className="profile-card__title">Preferences</h2>
               <div className="profile-grid">
                 <div className="profile-field">
+                  <h3 className="profile-field__label">Clothing to show</h3>
+                  <ChipList
+                    items={profile.gender_pref}
+                    emptyLabel="Not set yet"
+                  />
+                </div>
+                <div className="profile-field">
                   <h3 className="profile-field__label">Colors</h3>
                   <ChipList items={profile.color_prefs} />
                 </div>
@@ -155,6 +162,7 @@ export default function Profile() {
                   : [],
                 fit_pref: profile.fit_pref || "relaxed",
                 sleeve_pref: profile.sleeve_pref || "long",
+                gender_pref: profile.gender_pref || "",
               }}
               submitLabel="Save changes"
               apiSubmit={updateProfile}

@@ -135,6 +135,16 @@ def normalize_row(row: dict) -> dict | None:
     color = (row.get("baseColour") or "").strip()
     season = (row.get("season") or "").strip()
     gender = (row.get("gender") or "").strip()
+    display_name = (row.get("productDisplayName") or "").strip()
+
+    # Kidswear is out of scope for this app. Also: some Kaggle image files are
+    # mismatched for kids rows (e.g. id 5019 CSV=Skirts/Bottomwear but 5019.jpg
+    # is a tote bag). Excluding by display name avoids shipping those corrupt pairs
+    # without hardcoding individual ids. styles.csv labels for 5019 are correct;
+    # the image file is wrong.
+    name_l = display_name.lower()
+    if "kidswear" in name_l or " kids " in f" {name_l} " or name_l.startswith("kids "):
+        return None
 
     # category = subCategory so stratified sampling spreads across Topwear/Bottomwear/Shoes
     category = sub or article or "Unknown"
@@ -147,10 +157,11 @@ def normalize_row(row: dict) -> dict | None:
     return {
         "image_url": f"data/raw/images/{item_id}.jpg",
         "category": category,
+        "gender": gender or None,
         "style_tags": style_tags,
         "formality_level": USAGE_TO_FORMALITY.get(usage, "casual"),
         "color_tags": [color] if color else [],
-        # Keep source id for debugging; not stored on Outfit model.
+        # Keep source id for debugging / gender backfill matching.
         "source_id": item_id,
     }
 

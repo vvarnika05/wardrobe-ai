@@ -49,6 +49,7 @@ def get_recommendations(
     color_prefs = profile.color_prefs if isinstance(profile.color_prefs, list) else []
     fit_pref = profile.fit_pref or ""
     sleeve_pref = profile.sleeve_pref or ""
+    gender_pref = profile.gender_pref  # may be None on older profiles
 
     # Any prior swipe (accepted or rejected) — exclude so decks don't resurface.
     exclude_ids = {
@@ -66,6 +67,7 @@ def get_recommendations(
             sleeve_pref=sleeve_pref,
             deck_size=10,
             exclude_ids=exclude_ids,
+            gender_pref=gender_pref,
         )
     except ValueError as exc:
         # Validation failures (invented IDs, empty picks) and clear data errors.

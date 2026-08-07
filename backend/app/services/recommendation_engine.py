@@ -101,6 +101,7 @@ def generate_recommendations(
     sleeve_pref: str,
     deck_size: int = 10,
     exclude_ids: set[int] | None = None,
+    gender_pref: str | None = None,
 ) -> list[dict]:
     """
     Build a ranked swipe deck for this profile.
@@ -108,12 +109,15 @@ def generate_recommendations(
     exclude_ids: outfit IDs this user has already swiped (accepted or rejected).
     Those are dropped at retrieval so decks don't resurface prior looks.
 
+    gender_pref: clothing-department filter passed to Chroma (men/women/unisex).
+
     Returns a list of dicts:
       {outfit_id, category, color_tags, formality_level, reason}
     May be shorter than deck_size (or empty) if the catalog is exhausted.
     """
     # a) Retrieve more candidates than we show so the LLM can filter weak matches.
     #    Swiped outfits are excluded before top_k truncation inside retrieval.
+    #    gender_pref is a hard Chroma metadata filter when men/women.
     candidates = retrieve_candidate_outfits(
         style_tags=profile,
         color_prefs=color_prefs,
@@ -121,6 +125,7 @@ def generate_recommendations(
         sleeve_pref=sleeve_pref,
         top_k=15,
         exclude_ids=exclude_ids,
+        gender_pref=gender_pref,
     )
     # Catalog exhausted (or tiny remainder) — return what we have, don't error.
     if not candidates:

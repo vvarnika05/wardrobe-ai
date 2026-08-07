@@ -78,6 +78,7 @@ def main() -> None:
             outfit = Outfit(
                 image_url=item["image_url"],
                 category=item["category"],
+                gender=item.get("gender"),
                 style_tags=item.get("style_tags"),
                 formality_level=item.get("formality_level"),
                 color_tags=item.get("color_tags"),

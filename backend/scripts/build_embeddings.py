@@ -54,12 +54,14 @@ def build_outfit_text(outfit: Outfit) -> str:
     style_tags = ", ".join(_as_list(outfit.style_tags))
     color_tags = ", ".join(_as_list(outfit.color_tags))
     formality = outfit.formality_level or ""
+    gender = outfit.gender or ""
 
     return (
         f"category: {outfit.category}, "
         f"tags: {style_tags}, "
         f"color: {color_tags}, "
-        f"formality: {formality}"
+        f"formality: {formality}, "
+        f"gender: {gender}"
     )
 
 
@@ -104,6 +106,8 @@ def main() -> None:
                 "style_tags": ", ".join(_as_list(outfit.style_tags)),
                 "color_tags": ", ".join(_as_list(outfit.color_tags)),
                 "formality_level": outfit.formality_level or "",
+                # Scalar string for Chroma `where` filters (Men/Women/Boys/Girls/Unisex).
+                "gender": outfit.gender or "",
             }
 
             # upsert = insert or overwrite by id (safe to re-run, no duplicates)

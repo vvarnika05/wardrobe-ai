@@ -16,9 +16,16 @@ const COLOR_OPTIONS = [
 const FIT_OPTIONS = ["relaxed", "fitted", "oversized", "tailored"];
 const SLEEVE_OPTIONS = ["long", "short", "sleeveless", "varies"];
 
+/** Clothing department to browse — not identity. */
+const GENDER_PREF_OPTIONS = [
+  { value: "men", label: "Men" },
+  { value: "women", label: "Women" },
+  { value: "unisex", label: "Unisex" },
+];
+
 /**
  * Form fields match backend ProfileCreate.
- * Visual-only: chips for colors, dark-themed inputs — logic unchanged.
+ * Visual-only: chips for colors + gender_pref, dark-themed inputs.
  */
 export default function StyleQuizForm({
   onSuccess,
@@ -36,6 +43,9 @@ export default function StyleQuizForm({
   const [fitPref, setFitPref] = useState(initialValues?.fit_pref || "relaxed");
   const [sleevePref, setSleevePref] = useState(
     initialValues?.sleeve_pref || "long"
+  );
+  const [genderPref, setGenderPref] = useState(
+    initialValues?.gender_pref || ""
   );
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -58,6 +68,10 @@ export default function StyleQuizForm({
       setError("Pick at least one color preference.");
       return;
     }
+    if (!genderPref) {
+      setError("Pick which clothing you'd like to see (Men / Women / Unisex).");
+      return;
+    }
 
     setSubmitting(true);
     try {
@@ -66,6 +80,7 @@ export default function StyleQuizForm({
         color_prefs: colorPrefs,
         fit_pref: fitPref,
         sleeve_pref: sleevePref,
+        gender_pref: genderPref,
       });
       onSuccess?.(profile);
     } catch (err) {
@@ -89,6 +104,39 @@ export default function StyleQuizForm({
           placeholder="e.g. Clean minimalist looks, mostly neutrals, nothing too formal"
           required
         />
+      </div>
+
+      <div className="quiz-field">
+        <span className="quiz-field__label">
+          Clothing to show
+          <span className="quiz-field__hint">
+            {" "}
+            — what you want to browse, not who you are
+          </span>
+        </span>
+        <div
+          className="color-chip-row"
+          role="radiogroup"
+          aria-label="Clothing to show"
+        >
+          {GENDER_PREF_OPTIONS.map(({ value, label }) => {
+            const selected = genderPref === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                role="radio"
+                className={
+                  selected ? "color-chip color-chip--selected" : "color-chip"
+                }
+                aria-checked={selected}
+                onClick={() => setGenderPref(value)}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <div className="quiz-field">

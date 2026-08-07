@@ -5,11 +5,21 @@ Flow:
   1. Build a query text string from profile fields (same style as build_embeddings.py)
   2. Embed that text
   3. Ask Chroma for the top_k most similar outfit vectors
+     (optional gender_pref → native metadata `where` filter)
   4. Return outfit ids + metadata + distance for the next LLM step
 """
 
 from app.vector_store.client import get_chroma_collection
 from app.vector_store.embedder import embed_text
+
+# Profile gender_pref → outfit.gender values included in Chroma `where`.
+# Boys/Girls are excluded for men/women so kids' items don't surface.
+# "unisex" / unset → no filter (full catalog). Filtering to only Unisex-tagged
+# rows would collapse the deck (~2 items in the curated set).
+GENDER_PREF_TO_OUTFIT_GENDERS: dict[str, list[str]] = {
+    "men": ["Men", "Unisex"],
+    "women": ["Women", "Unisex"],
+}
 
 
 def _build_query_text(
@@ -47,6 +57,22 @@ def _build_query_text(
     )
 
 
+def _chroma_gender_where(gender_pref: str | None) -> dict | None:
+    """
+    Build a Chroma metadata `where` clause for gender_pref, or None to skip filtering.
+
+    gender_pref is clothing-department preference (men/women/unisex), not identity.
+    """
+    if not gender_pref:
+        return None
+    key = str(gender_pref).strip().lower()
+    allowed = GENDER_PREF_TO_OUTFIT_GENDERS.get(key)
+    if not allowed:
+        # "unisex" or unknown → no hard filter
+        return None
+    return {"gender": {"$in": allowed}}
+
+
 def retrieve_candidate_outfits(
     style_tags: dict,
     color_prefs: list[str],
@@ -54,6 +80,7 @@ def retrieve_candidate_outfits(
     sleeve_pref: str,
     top_k: int = 15,
     exclude_ids: set[int] | None = None,
+    gender_pref: str | None = None,
 ) -> list[dict]:
     """
     Return top_k outfits from Chroma that are closest to this profile.
@@ -61,9 +88,12 @@ def retrieve_candidate_outfits(
     exclude_ids: outfit IDs already swiped by this user (any decision). Filtered
     out BEFORE truncating to top_k so exclusions don't shrink the shortlist.
 
+    gender_pref: optional hard filter via Chroma `where` on metadata.gender
+    (applied during vector search, not after).
+
     Each result dict has:
       - outfit_id (int)
-      - category, style_tags, color_tags, formality_level (from Chroma metadata)
+      - category, style_tags, color_tags, formality_level, gender (from Chroma metadata)
       - distance (float — lower means more similar for Chroma's default metric)
     """
     exclude_ids = exclude_ids or set()
@@ -72,22 +102,28 @@ def retrieve_candidate_outfits(
 
     collection = get_chroma_collection()  # connecting to chroma
 
+    where = _chroma_gender_where(gender_pref)
+
     # Over-fetch so we can drop swiped IDs and still fill top_k when possible.
     catalog_size = collection.count()
     n_fetch = min(catalog_size, top_k + len(exclude_ids)) if catalog_size else top_k
     if n_fetch <= 0:
         return []
 
-    results = collection.query(
-        query_embeddings=[query_vector],
-        n_results=n_fetch,
-        include=["metadatas", "distances"],
-    )
+    query_kwargs: dict = {
+        "query_embeddings": [query_vector],
+        "n_results": n_fetch,
+        "include": ["metadatas", "distances"],
+    }
+    if where is not None:
+        query_kwargs["where"] = where
+
+    results = collection.query(**query_kwargs)
 
     # Chroma returns lists-of-lists (one inner list per query). We sent one query.
-    ids = results["ids"][0]
-    metadatas = results["metadatas"][0]
-    distances = results["distances"][0]
+    ids = results["ids"][0] if results.get("ids") else []
+    metadatas = results["metadatas"][0] if results.get("metadatas") else []
+    distances = results["distances"][0] if results.get("distances") else []
 
     candidates: list[dict] = []
     for doc_id, meta, distance in zip(ids, metadatas, distances):
@@ -98,6 +134,7 @@ def retrieve_candidate_outfits(
             {
                 "outfit_id": outfit_id,
                 "category": meta.get("category"),
+                "gender": meta.get("gender") or None,
                 # Stored as joined strings in Chroma; split back into lists.
                 "style_tags": [
                     t.strip()
