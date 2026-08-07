@@ -88,9 +88,9 @@ This is **text-tag retrieval + LLM ranking**, not image embeddings and not a cla
    `category: …, tags: …, color: …, formality: …, gender: …`  
    via `sentence-transformers` `all-MiniLM-L6-v2` → Chroma collection `"outfits"` (persistent under `backend/data/chroma_store/`). Metadata includes scalar `gender` for filters.  
 3. **Retrieve** — `retrieve_candidate_outfits(...)` embeds a profile query string; if `gender_pref` is **`men`** → Chroma `where gender $in [Men, Unisex]`; **`women`** → `[Women, Unisex]`; **`unisex` or unset** → **no gender filter** (full catalog — only ~2 Unisex-tagged curated items, so filtering to Unisex alone would empty decks). Over-fetches, drops already-swiped ids, keeps up to `top_k=15`.  
-4. **Generate** — `generate_recommendations` tags each candidate `[COLOR MATCH]` / `[COLOR MISMATCH]` via case-insensitive overlap of outfit `color_tags` vs profile `color_prefs`, sends candidates + profile + static trends to Gemini (prompt strongly prefers MATCH); LLM must pick only given `outfit_id`s. Exhausted catalog → short/`[]` deck, no error.  
-5. **Validate** — drop invented IDs; merge reasons; **re-sort COLOR MATCH before MISMATCH**.  
-6. **Serve** — attach public `image_url` in the recommend (and saved) routes.
+4. **Generate** — `generate_recommendations` tags each candidate `[COLOR MATCH]` / `[COLOR MISMATCH]`, sends candidates + profile + static trends to Gemini. **If Gemini fails (429 quota, network, bad JSON, empty validation), logs and returns Chroma candidates in retrieval order** (`used_llm=false`) — `/recommend` stays HTTP 200 so swipe still works.  
+5. **Validate** — drop invented IDs; merge reasons; **re-sort COLOR MATCH before MISMATCH** (LLM path only).  
+6. **Serve** — attach public `image_url`; response may include `used_llm` (optional for clients).
 
 **Swipe exclusion:** `GET /recommend` loads all of the current user’s `SwipeLog.outfit_id`s into `exclude_ids` before retrieval.
 

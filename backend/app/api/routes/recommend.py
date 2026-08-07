@@ -60,7 +60,7 @@ def get_recommendations(
     }
 
     try:
-        outfits = generate_recommendations(
+        outfits, used_llm = generate_recommendations(
             profile=style_tags,
             color_prefs=color_prefs,
             fit_pref=fit_pref,
@@ -69,17 +69,12 @@ def get_recommendations(
             exclude_ids=exclude_ids,
             gender_pref=gender_pref,
         )
-    except ValueError as exc:
-        # Validation failures (invented IDs, empty picks) and clear data errors.
-        raise HTTPException(
-            status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Recommendation validation failed: {exc}",
-        ) from exc
     except Exception as exc:
-        # LLM / network / unexpected failures.
+        # Retrieval / unexpected failures only — Gemini errors are handled inside
+        # generate_recommendations via retrieval-order fallback (HTTP 200).
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
-            detail=f"Recommendation LLM request failed: {exc}",
+            detail=f"Recommendation retrieval failed: {exc}",
         ) from exc
 
     # Attach browser-loadable image URLs from Outfit rows.
@@ -92,4 +87,4 @@ def get_recommendations(
         row = rows.get(o["outfit_id"])
         o["image_url"] = _public_image_url(request, row.image_url if row else None)
 
-    return RecommendResponse(outfits=outfits)
+    return RecommendResponse(outfits=outfits, used_llm=used_llm)
