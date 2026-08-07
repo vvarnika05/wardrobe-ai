@@ -85,6 +85,19 @@ def main() -> None:
         total = len(outfits)
         print(f"Found {total} outfits in Postgres")
 
+        # Drop Chroma docs whose ids are no longer in Postgres (e.g. after
+        # load_outfits_to_db --force reassigned ids 181–360 while old 1–180 lingered).
+        # Without this, /recommend can return stale ids → no DB row → "No image".
+        live_ids = {str(o.id) for o in outfits}
+        existing = collection.get(include=[])
+        orphans = [cid for cid in (existing.get("ids") or []) if cid not in live_ids]
+        if orphans:
+            # Chroma delete accepts batches; chunk defensively for large catalogs.
+            chunk = 100
+            for start in range(0, len(orphans), chunk):
+                collection.delete(ids=orphans[start : start + chunk])
+            print(f"Deleted {len(orphans)} orphan Chroma ids not in Postgres")
+
         for i, outfit in enumerate(outfits, start=1):
             chroma_id = str(outfit.id)
 

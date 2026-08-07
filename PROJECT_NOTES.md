@@ -114,7 +114,7 @@ This is **text-tag retrieval + LLM ranking**, not image embeddings and not a cla
 - **Query vs document text mismatch** — profile query uses `aesthetic` / `fit` / `sleeve`; outfit vectors use `category` / Kaggle tags; retrieval is directional but noisy. Color preference is reinforced post-retrieval via exact `color_tags` ∩ `color_prefs` (case-insensitive) — synonyms like cream≈beige are not fuzzy-matched.  
 - **Tag-only embeddings** — no CLIP/vision; color can lose to shared “Casual Topwear” tokens.  
 - **Catalog exhaustion** — ~180 outfits; after enough swipes `/recommend` may return a short or empty deck (by design — no error). Re-swiping the same id still upserts `SwipeLog`. Gender filter further shrinks the candidate pool.  
-- **Chroma vs Postgres sync** — if `data/chroma_store/` is deleted, `build_embeddings.py` without `--force` skips rows that already have `embedding_id`. Use `--force` to rebuild (required after gender metadata backfill).  
+- **Chroma vs Postgres sync** — if `data/chroma_store/` is deleted, `build_embeddings.py` without `--force` skips rows that already have `embedding_id`. Use `--force` to rebuild. After `load_outfits_to_db.py --force` (new outfit ids), always re-run `build_embeddings.py` (even without `--force` is enough to **delete orphan Chroma ids**); leftover old ids caused “No image” on swipe cards.  
 - **`create_all` ≠ migrations** — schema changes need explicit SQL/scripts (`migrate_add_gender.py`, etc.).  
 - **Gemini** — sync, can be slow; `google.generativeai` shows deprecation warnings; model name may be `gemini-2.5-flash` in `llm_client.py`.  
 - **Swipe drag** — buttons are solid; drag/exit animation can be rough.  
