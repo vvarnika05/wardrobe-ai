@@ -20,7 +20,7 @@ Auth: JWT Bearer (`Authorization: Bearer <token>`). CORS allows all origins for 
 | `GET` | `/auth/me` | yes | current user |
 | `POST` | `/profile` | yes | upsert by `user_id`; body `{style_description, color_prefs, fit_pref, sleeve_pref, gender_pref}` where `gender_pref` is `"men"` \| `"women"` \| `"unisex"` (clothing to browse, **not** identity); Gemini parses `style_description` → `style_tags` |
 | `GET` | `/profile/me` | yes | 404 if no profile; `gender_pref` may be `null` on older rows |
-| `GET` | `/recommend` | yes | ranked swipe deck; excludes already-swiped outfit_ids; Chroma **gender** filter when `gender_pref` is men/women; color-relevance ranking; `image_url` via `/static/images/...` |
+| `GET` | `/recommend` | yes | ranked swipe deck; excludes already-swiped outfit_ids; Chroma **gender** filter when `gender_pref` is men/women; color-relevance ranking; response includes `curated_by_ai` / `used_llm`; `image_url` via `/static/images/...` |
 | `POST` | `/swipe` | yes | `{outfit_id, decision}` where decision is `"accepted"` \| `"rejected"`; **upsert** on `(user_id, outfit_id)` |
 | `GET` | `/saved` | yes | accepted swipes + outfit metadata + `image_url` + `swiped_at` |
 | `GET` | `/swipes` | yes | full swipe history (debug) |
@@ -87,14 +87,25 @@ This is **text-tag retrieval + LLM ranking**, not image embeddings and not a cla
 2. **Index** — each outfit embedded from a fixed string shape including gender, e.g.  
    `category: …, tags: …, color: …, formality: …, gender: …`  
    via `sentence-transformers` `all-MiniLM-L6-v2` → Chroma collection `"outfits"` (persistent under `backend/data/chroma_store/`). Metadata includes scalar `gender` for filters.  
-3. **Retrieve** — `retrieve_candidate_outfits(...)` embeds a profile query string; if `gender_pref` is **`men`** → Chroma `where gender $in [Men, Unisex]`; **`women`** → `[Women, Unisex]`; **`unisex` or unset** → **no gender filter** (full catalog — only ~2 Unisex-tagged curated items, so filtering to Unisex alone would empty decks). Over-fetches, drops already-swiped ids, keeps up to `top_k=15`.  
-4. **Generate** — `generate_recommendations` tags each candidate `[COLOR MATCH]` / `[COLOR MISMATCH]`, sends candidates + profile + static trends to Gemini. **If Gemini fails (429 quota, network, bad JSON, empty validation), logs and returns Chroma candidates in retrieval order** (`used_llm=false`) — `/recommend` stays HTTP 200 so swipe still works.  
-5. **Validate** — drop invented IDs; merge reasons; **re-sort COLOR MATCH before MISMATCH** (LLM path only).  
-6. **Serve** — attach public `image_url`; response may include `used_llm` (optional for clients).
+3. **Retrieve** — `retrieve_candidate_outfits(...)` embeds a profile query string; if `gender_pref` is **`men`** → Chroma `where gender $in [Men, Unisex]`; **`women`** → `[Women, Unisex]`; **`unisex` or unset** → **no gender filter** (full catalog — only ~2 Unisex-tagged curated items, so filtering to Unisex alone would empty decks). Over-fetches, drops already-swiped ids, keeps up to `top_k=15`. **Gender filtering happens here at Chroma query time — it still applies when Gemini is down.**  
+4. **Generate** — `rank_by_color_relevance()` (pure Python) tags/sorts MATCH before MISMATCH; Gemini ranks from that shortlist.  
+5. **Validate** — drop invented IDs; merge LLM reasons; re-apply color sort as a hard guarantee.  
+6. **LLM fallback (deliberate resilience)** — if Gemini fails (429 quota, network, bad JSON, empty validation, or `RECOMMEND_FORCE_FALLBACK=true`): log stack trace, return top `deck_size` from `rank_by_color_relevance()` with generic reason `"Selected based on your saved preferences."`, HTTP **200**, `curated_by_ai=false` (also mirrored as `used_llm=false`). Does **not** skip gender filter or color sort.  
+7. **Serve** — attach public `image_url`.
 
 **Swipe exclusion:** `GET /recommend` loads all of the current user’s `SwipeLog.outfit_id`s into `exclude_ids` before retrieval.
 
-**Trends** are a manually edited JSON list — no scraping, no scheduling, not embedded.
+**Color prefs vs trends:** explicit `color_prefs` + `[COLOR MATCH]` flags outrank trend phrases (e.g. “earth tone palettes”, “quiet luxury neutrals”). Trends are tie-breakers among matches only. Catalog has limited bright stock (~19/180 pink|red|purple) — a real sparsity ceiling, not a matching bug.
+
+**Force fallback for local testing** (no need to burn Gemini quota):
+
+```bash
+# backend/.env
+RECOMMEND_FORCE_FALLBACK=true
+# restart uvicorn, GET /recommend → curated_by_ai should be false
+# then set back to false / remove the line
+```
+
 
 ---
 

@@ -60,7 +60,7 @@ def get_recommendations(
     }
 
     try:
-        outfits, used_llm = generate_recommendations(
+        outfits, curated_by_ai = generate_recommendations(
             profile=style_tags,
             color_prefs=color_prefs,
             fit_pref=fit_pref,
@@ -71,7 +71,7 @@ def get_recommendations(
         )
     except Exception as exc:
         # Retrieval / unexpected failures only — Gemini errors are handled inside
-        # generate_recommendations via retrieval-order fallback (HTTP 200).
+        # generate_recommendations via color-sorted fallback (HTTP 200).
         raise HTTPException(
             status_code=status.HTTP_502_BAD_GATEWAY,
             detail=f"Recommendation retrieval failed: {exc}",
@@ -87,4 +87,8 @@ def get_recommendations(
         row = rows.get(o["outfit_id"])
         o["image_url"] = _public_image_url(request, row.image_url if row else None)
 
-    return RecommendResponse(outfits=outfits, used_llm=used_llm)
+    return RecommendResponse(
+        outfits=outfits,
+        curated_by_ai=curated_by_ai,
+        used_llm=curated_by_ai,
+    )

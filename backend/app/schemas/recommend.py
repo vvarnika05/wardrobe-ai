@@ -13,6 +13,7 @@ class RecommendedOutfit(BaseModel):
 
 class RecommendResponse(BaseModel):
     outfits: list[RecommendedOutfit]
-    # True when Gemini ranked the deck; False on retrieval-only fallback.
-    # Optional for older clients — default True preserves prior mental model.
+    # True when Gemini ranked the deck; False on color-sorted retrieval fallback.
+    curated_by_ai: bool = True
+    # Alias kept for earlier clients / notes that used used_llm.
     used_llm: bool = True

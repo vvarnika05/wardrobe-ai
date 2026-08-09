@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
     GEMINI_API_KEY: str
+    # Dev/test only: skip Gemini and force color-sorted Chroma fallback.
+    RECOMMEND_FORCE_FALLBACK: bool = False
 
 
 settings = Settings()
