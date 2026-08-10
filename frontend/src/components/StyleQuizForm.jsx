@@ -2,15 +2,9 @@ import { useState } from "react";
 import { createProfile } from "../api/client";
 
 const COLOR_OPTIONS = [
-  "black",
-  "white",
-  "beige",
-  "navy",
-  "grey",
-  "brown",
-  "olive",
-  "red",
-  "blue",
+  "black", "white", "beige", "navy", "grey", "brown", "olive",
+  "red", "blue", "pink", "purple", "green", "yellow", "orange",
+  "burgundy", "cream", "tan", "teal"
 ];
 
 const FIT_OPTIONS = ["relaxed", "fitted", "oversized", "tailored"];
